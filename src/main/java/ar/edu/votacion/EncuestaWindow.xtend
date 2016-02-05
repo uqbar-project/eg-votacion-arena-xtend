@@ -8,6 +8,7 @@ import org.uqbar.arena.widgets.Selector
 import org.uqbar.arena.widgets.tables.Column
 import org.uqbar.arena.widgets.tables.Table
 import org.uqbar.arena.windows.MainWindow
+import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
 
 class EncuestaWindow extends MainWindow<Encuesta> {
 	
@@ -25,17 +26,17 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 		new Label(mainPanel).text = "Zona de votación"
 		new Selector<Zona>(mainPanel) => [
 			allowNull = false
-			val itemsProperty = bindItemsToProperty("zonas")
+			val itemsProperty = items <=> "zonas"
 			itemsProperty.adapter = 
 			    new PropertyAdapter(typeof(Zona), "descripcionLarga")
-			bindValueToProperty("zonaVotacion")
+			value <=> "zonaVotacion"
 		]
 		
 		new Label(mainPanel).text = "Candidato"
 		new Selector<Candidato>(mainPanel) => [
 			allowNull = false
-			bindItemsToProperty("zonaVotacion.candidatos")
-			bindValueToProperty("candidato")
+			items <=> "zonaVotacion.candidatos"
+			value <=> "candidato"
 		]
 		
 		new Button(mainPanel) => [
@@ -50,7 +51,7 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 		val gridCandidatos = new Table(mainPanel, typeof(Candidato)) => [
 			width = 600
 			height = 400
-			bindItemsToProperty("zonaVotacion.candidatos")
+			items <=> "zonaVotacion.candidatos"
 		]
 		
 		new Column<Candidato>(gridCandidatos) => [
