@@ -4,6 +4,10 @@
 
 Aplicación que permite a una empresa encuestadora registrar las intenciones de voto de los distintos candidatos.
 
+![image](https://cloud.githubusercontent.com/assets/4549002/17304850/0a57784c-57fe-11e6-8f11-eae4ec64b442.png)
+
 ## Conceptos a ver
 
-* Combos anidados entre zonas y candidatos
+* combos anidados entre zonas y candidatos
+* en el combo de zonas se muestra una propiedad específica "descripcionLarga" para Zona
+* al votar se ve el binding bidireccional: la vista dispara un cambio en el candidato, y el candidato termina disparando una notificación a la tabla
