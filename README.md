@@ -9,5 +9,5 @@ Aplicación que permite a una empresa encuestadora registrar las intenciones de 
 ## Conceptos a ver
 
 * combos anidados entre zonas y candidatos
-* en el combo de zonas se muestra una propiedad específica "descripcionLarga" para Zona
+* en el combo de zonas se muestra una propiedad específica *descripcionLarga* para Zona
 * al votar se ve el binding bidireccional: la vista dispara un cambio en el candidato, y el candidato termina disparando una notificación a la tabla
