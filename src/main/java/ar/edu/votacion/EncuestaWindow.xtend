@@ -50,7 +50,7 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 	def createGrillaCandidatos(Panel mainPanel) {
 		val gridCandidatos = new Table(mainPanel, typeof(Candidato)) => [
 			width = 600
-			height = 400
+			numberVisibleRows = 7
 			items <=> "zonaVotacion.candidatos"
 		]
 		
