@@ -5,21 +5,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eg-votacion-arena-xtend</name>
 	<description>Ejemplo más simple de una aplicación con Arena usando bindings.</description>
-
-    <repositories>
-		<repository>
-			<id>uqbar-wiki.org-releases</id>
-			<name>uqbar-wiki.org-releases</name>
-			<url>http://uqbar-wiki.org/mvn/releases</url>
-		</repository>
-		<repository>
-			<snapshots />
-			<id>uqbar-wiki.org-snapshots</id>
-			<name>uqbar-wiki.org-snapshots</name>
-			<url>http://uqbar-wiki.org/mvn/snapshots</url>
-		</repository>
-	</repositories>
-    
+   
 	<parent>
 		<groupId>org.uqbar-project</groupId>
 		<artifactId>arena-xtend-parent</artifactId>
