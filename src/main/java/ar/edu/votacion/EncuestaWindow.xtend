@@ -1,5 +1,6 @@
 package ar.edu.votacion
 
+import org.uqbar.arena.bindings.NotNullObservable
 import org.uqbar.arena.bindings.PropertyAdapter
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.widgets.Label
@@ -8,17 +9,19 @@ import org.uqbar.arena.widgets.Selector
 import org.uqbar.arena.widgets.tables.Column
 import org.uqbar.arena.widgets.tables.Table
 import org.uqbar.arena.windows.MainWindow
+
 import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
 
 class EncuestaWindow extends MainWindow<Encuesta> {
 	
-	new() {
-		super(new Encuesta)
+	new(Encuesta model) {
+		super(model)
 	}
 	
 	static def void main(String[] arg) {
-		new EncuestaWindow().startApplication
+		new EncuestaWindow(new Encuesta).startApplication
 	}
+	
 	
 	override createContents(Panel mainPanel) {
 		this.title = "Encuestadora Cachivache"
@@ -26,22 +29,21 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 		new Label(mainPanel).text = "Zona de votación"
 		new Selector<Zona>(mainPanel) => [
 			allowNull = false
-			val itemsProperty = items <=> "zonas"
-			itemsProperty.adapter = 
-			    new PropertyAdapter(typeof(Zona), "descripcionLarga")
+			(items <=> "zonas").adapter = new PropertyAdapter(Zona, "descripcion")
 			value <=> "zonaVotacion"
 		]
 		
 		new Label(mainPanel).text = "Candidato"
 		new Selector<Candidato>(mainPanel) => [
 			allowNull = false
-			items <=> "zonaVotacion.candidatos"
+			(items <=> "zonaVotacion.candidatos").adapter = new PropertyAdapter(Candidato, "descripcion")
 			value <=> "candidato"
 		]
 		
 		new Button(mainPanel) => [
 			caption = "Sumar voto"
-			onClick [ | modelObject.sumarVoto ]
+			onClick [ modelObject.sumarVoto ]
+			bindEnabled(new NotNullObservable("candidato"))
 		]
 		
 		createGrillaCandidatos(mainPanel)
@@ -68,6 +70,5 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 			title = "Votos"
 			bindContentsToProperty("votos")
 		]
-	}
-	
+	}	
 }

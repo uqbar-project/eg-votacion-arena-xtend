@@ -15,12 +15,11 @@ class Candidato {
 		this.partido = partido
 	}
 	
-	override toString() {
-		nombre + " (" + partido + ")"
-	}
-	
 	def sumarVoto() {
 		votos++
 	}
 	
+	def getDescripcion() {
+		nombre + " (" + partido + ")"
+	}
 }

@@ -10,9 +10,6 @@ class RepoZonas {
 		}
 		instance
 	}
-	
-	private new() {
-	}
 
 	def getZonas() {
 		val caba = new Zona("CABA")

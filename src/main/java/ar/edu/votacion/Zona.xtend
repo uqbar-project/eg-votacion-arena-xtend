@@ -8,23 +8,14 @@ import org.uqbar.commons.model.annotations.Observable
 @Accessors
 class Zona {
 	String descripcion
-	List<Candidato> candidatos
+	List<Candidato> candidatos = newArrayList
 	
 	new(String descripcion) {
-		this.candidatos = newArrayList
 		this.descripcion = descripcion
 	}
 	
 	def void agregarCandidato(String nombre, String partido) {
-		this.candidatos.add(new Candidato(nombre, partido))
-	}
-
-	override toString() {
-		descripcion
-	}
-	
-	def getDescripcionLarga() {
-		descripcion
+		candidatos.add(new Candidato(nombre, partido))
 	}	
 	
 }
