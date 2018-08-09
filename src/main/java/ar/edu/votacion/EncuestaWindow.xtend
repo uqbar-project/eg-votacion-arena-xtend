@@ -58,11 +58,13 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 		new Column<Candidato>(gridCandidatos) => [
 			title = "Candidato"
 			bindContentsToProperty("nombre")
+			fixedSize = 200
 		]
 		
 		new Column<Candidato>(gridCandidatos) => [
 			title = "Partido"
 			bindContentsToProperty("partido")
+			fixedSize = 150
 		]
 		
 		new Column<Candidato>(gridCandidatos) => [
