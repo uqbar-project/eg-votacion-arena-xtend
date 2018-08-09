@@ -5,7 +5,7 @@ class RepoZonas {
 	static RepoZonas instance
 
 	static def getInstance() {
-		if (instance == null) {
+		if (instance === null) {
 			instance = new RepoZonas()
 		}
 		instance

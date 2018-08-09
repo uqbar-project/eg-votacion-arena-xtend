@@ -22,7 +22,6 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 		new EncuestaWindow(new Encuesta).startApplication
 	}
 	
-	
 	override createContents(Panel mainPanel) {
 		this.title = "Encuestadora Cachivache"
 		
