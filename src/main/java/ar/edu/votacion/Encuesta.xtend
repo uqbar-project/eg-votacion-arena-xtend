@@ -12,7 +12,7 @@ class Encuesta {
 
 	new() {
 		repoZonas = RepoZonas.instance
-		zonaVotacion = repoZonas.zonas.get(0) 
+//		zonaVotacion = repoZonas.zonas.get(0) 
 	}
 	
 	def getZonas() {

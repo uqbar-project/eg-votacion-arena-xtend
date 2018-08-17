@@ -35,7 +35,8 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 		new Label(mainPanel).text = "Candidato"
 		new Selector<Candidato>(mainPanel) => [
 			allowNull = false
-			(items <=> "zonaVotacion.candidatos").adapter = new PropertyAdapter(Candidato, "descripcion")
+			(items <=> "zonaVotacion.candidatos")
+				.adapter = new PropertyAdapter(Candidato, "descripcion")
 			value <=> "candidato"
 		]
 		
@@ -50,7 +51,6 @@ class EncuestaWindow extends MainWindow<Encuesta> {
 
 	def createGrillaCandidatos(Panel mainPanel) {
 		val gridCandidatos = new Table(mainPanel, typeof(Candidato)) => [
-			width = 600
 			numberVisibleRows = 7
 			items <=> "zonaVotacion.candidatos"
 		]
