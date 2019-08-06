@@ -17,5 +17,4 @@ class Zona {
 	def void agregarCandidato(String nombre, String partido) {
 		candidatos.add(new Candidato(nombre, partido))
 	}	
-	
 }
